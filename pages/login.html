@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Login Page </title>
+        <link href="../styles/loginstyle.css" rel="stylesheet" type="text/css"> 
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <div class="video-container">
+            <video autoplay muted loop id="video-bg">
+              <source src="../images/shooting-star.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+        </div>
+        <div class="wrapper">
+        <form>
+            <div class="elements">
+                <label for="Uname" class="label">Username</label>
+                <input type="text" class="username" name="Uname" placeholder="Enter Username" id="Uname">
+                <i class="material-icons" style="font-size:25px;">&#xe7fd;</i>
+            </div>
+            <div class="elements" >
+                <label for="password" class="label">Password</label>
+                <input type="password" class="password" name="password" placeholder="Enter Password"  id="password">
+                <i class="material-icons"  style="font-size: 25px"; >&#xe897;</i>
+            </div>
+            <div class="elements">
+                <input type="checkbox" class="checkbox" name="checkbox" id="checkbox" style="background-color: #3bacac;">
+                <span class="checkmark"></span>
+                <label for="checkbox"  class="checklabel">Stay Logged in</label>
+            </div>
+        </form>
+            <div class="login-element">
+            <input type="submit" value="Login" name="Login" id="button">
+            </div>   
+            <div class="elements">
+                <a class="forgot-password" href="#forgetpage">Forget Password?</a>
+                <button value="SignUp" class="Signup-button">Create Account</button>
+            </div>
+     
+    </div>
+
+    </body>
+</html>
