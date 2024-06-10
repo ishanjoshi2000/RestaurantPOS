@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(231, 59, 59);
+    width: 100%;
+}
+body,ul,li,nav{
+    padding: 0;
+    margin: 0 ;
+ 
+}
+nav{
+    background-color: aqua;   
+    width: 100%;
+}
+.Subnav{
+    display: none;
+}
+nav ul{
+    display:flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    
+}
+nav ul li{
+    padding:20px;
+}
+
