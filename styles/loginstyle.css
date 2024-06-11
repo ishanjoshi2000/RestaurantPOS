@@ -10,7 +10,7 @@ body{
   padding: 20px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 10px;
-  border: 2px solid #1b1a1a; 
+  border: 2px solid #13a0d8; 
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* White box shadow */
     }
 form{
@@ -80,9 +80,9 @@ video-container {
   background-size: 25px 25px;
   text-align: left;
   padding-left: 30px;
-  background-color:#ca9d42; 
+  background-color: #64f2eb; 
   font-size: 16px;
-  color: #3d3b3b; 
+  color: #050505; 
   text-decoration: none;
   text-decoration-color:  #383636;
   border: none;
@@ -98,11 +98,11 @@ video-container {
   background-size: 25px 25px;
   text-align: left;
   padding-left: 30px;
-  background-color:#ca9d42 ; 
+  background-color:#64f2eb;  
   font-size: 16px;
-  color: #383636; 
+  color: #050505;  
   text-decoration: none;
-  text-decoration-color: #0f0f0f00;
+  text-decoration-color: #0a0a0a00;
   border: none;
   cursor: pointer;
 }

@@ -5,35 +5,50 @@
         <link href="../styles/mainstyle.css" rel="stylesheet" type="text/css"> 
         <meta name="viewport" content="width=device-width">
     </head>
-    <body>
-        <header>
-            <nav>
+    <body>  
+               
                 <ul>
-                    <li><a href="./mainpage.html">HomePage</a></li>
-                    <li><a href="./login.html">LogOut</a></li>
-                    <li><a href="#Admin">Admin</a></li>
-                    <li><a href="#report">Reports</a>
+                    <li class="current"><img src="../images/home.png"><a href="./mainpage.html">HomePage</a></li>
+                    <li><img src="../images/administrator.png"><a href="#Admin">Admin</a></li>
+                    <li class="dropdown"><img src="../images/report.png">
+                        <a  class="dropbtn"href="#report">Reports</a>
                         <ul class="Subnav">
                             <li><a href="#SalesReport">SalesReport</a></li>
                             <li><a href="#Produt-wiseReport">Product-Wise Report</a></li>
                         </ul>
                     </li>
-                    <li><a href="#Product Master">Products</a></li>
-                    <li><a href="#User Master">Users</a></li>
-                    <li><a href="#Ledger">Ledgers</a>
+                    <li><img src="../images/product.png"><a href="#Product Master">Products</a></li>
+                    <li><img src="../images/group.png"><a href="#User Master">Users</a></li>
+                    <li class="dropdown"><img src="../images/ledger.png" style="height: 25px; width: 25px;">
+                        <a class="dropbtn" href="#Ledger">Ledgers</a>
                         <ul class="Subnav">
                             <li><a href="#Sales-Register">Sales-Register</a></li>
                             <li><a href="#Purchase-Register">Purchase-Register</a></li>
                         </ul>
                     </li>
+                    <li><img src="../images/logout.png"><a href="./login.html">LogOut</a></li>
+                    <li><img src="../images/medical.png"><a>Bill Entry</a></li>
                 </ul>
-            </nav>
-       </header>
-            <!-- <div class="Display-Section">
-            </div>
-            <div class="billing-section">
-            </div>
-            <div class ="categories">          
-        </div> -->
+             
+
+            <div class="Display-Section">
+                <!-- <div id="product-container">
+
+                </div> -->
+            
+                <div class="billing-section">
+                   
+                </div>
+                
+                </div>
+                <div class ="categories">  
+                    <ul>
+                        <li>
+
+                        </li>
+                    </ul>        
+                </div>
+        </div>
+        <script src="../scripts/script.js"></script>
     </body>
 </html>
