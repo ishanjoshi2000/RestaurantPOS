@@ -2,53 +2,56 @@
 <html>
     <head>
         <title> Main Page </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="../styles/mainstyle.css" rel="stylesheet" type="text/css"> 
         <meta name="viewport" content="width=device-width">
+        
     </head>
-    <body>  
+    <body> 
+     
+            <div class=" header">
+                <div class="logo">
+                        <img src="../images/food/img12.jpg">
+                        <h2>Restaurant POS</h2>
+                </div>
+                <div class="search">
+                    <form>
+                        <input type="text" class="searchfeild" name="Search" placeholder="Search...">
+                        <select id="combo-box" name="combo-box">   
+                        </select>
+                    </form>
+               </div> 
+                 <div  class="navigation ">
+                       <a  class="current" href="#Home">Home</a>
+                       <a href="#About">About</a> 
+                       <a href="#cart">Cart</a> 
+                       <a href="../pages/login.html">Logout</a> 
+                 </div>  
                
-                <ul>
-                    <li class="current"><img src="../images/home.png"><a href="./mainpage.html">HomePage</a></li>
-                    <li><img src="../images/administrator.png"><a href="#Admin">Admin</a></li>
-                    <li class="dropdown"><img src="../images/report.png">
-                        <a  class="dropbtn"href="#report">Reports</a>
-                        <ul class="Subnav">
-                            <li><a href="#SalesReport">SalesReport</a></li>
-                            <li><a href="#Produt-wiseReport">Product-Wise Report</a></li>
-                        </ul>
-                    </li>
-                    <li><img src="../images/product.png"><a href="#Product Master">Products</a></li>
-                    <li><img src="../images/group.png"><a href="#User Master">Users</a></li>
-                    <li class="dropdown"><img src="../images/ledger.png" style="height: 25px; width: 25px;">
-                        <a class="dropbtn" href="#Ledger">Ledgers</a>
-                        <ul class="Subnav">
-                            <li><a href="#Sales-Register">Sales-Register</a></li>
-                            <li><a href="#Purchase-Register">Purchase-Register</a></li>
-                        </ul>
-                    </li>
-                    <li><img src="../images/logout.png"><a href="./login.html">LogOut</a></li>
-                    <li><img src="../images/medical.png"><a>Bill Entry</a></li>
-                </ul>
-             
+            </div>   
+            <div class="display ">
+                   <div id="product-container" class="scroll-bar">
+                   </div>  
+                   <div class="Billing-section ">
+                    
+                         <input type="text" class="billno" placeholder="BillNO">
+                         <div class="Cart">
+                             
+                         </div>
+                            <select id="payment-box">
+                                <option>Cash</option>
+                                <option>Esewa</option>
+                                <option>Fonepay</option>
+                                <option>Other</option>
+                          </select>
+                          <form>
+                         <input type="button" value="OK">
+                         <input type="button"  value="checkout">
+                       </form>
 
-            <div class="Display-Section">
-                <!-- <div id="product-container">
+                   </div>      
+            </div>
 
-                </div> -->
-            
-                <div class="billing-section">
-                   
-                </div>
-                
-                </div>
-                <div class ="categories">  
-                    <ul>
-                        <li>
-
-                        </li>
-                    </ul>        
-                </div>
-        </div>
         <script src="../scripts/script.js"></script>
     </body>
 </html>

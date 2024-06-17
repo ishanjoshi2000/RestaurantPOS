@@ -307,11 +307,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const productsHTML = data.products.map(product => `
         <div class="product">
-            <h2>${product.name}</h2>
-            <p>Price: ${product.price}</p>
+
             <img src="${product.image}">
+             <h2>${product.name}</h2>
+            <p>Price:Rs${product.price}</p>
         </div>
     `);
     productContainer.innerHTML = productsHTML.join('');
 });
 
+function populateComboBox(data) {
+  const categorySelect = document.getElementById('combo-box');
+  const categories = [...new Set(data.products.map(item => item.category))]; 
+  categories.sort();
+  categories.forEach(category => {
+      const option = document.createElement('option');
+      option.value = category;
+      option.text = category;
+      categorySelect.appendChild(option);
+  });
+}
+
+populateComboBox(data);
