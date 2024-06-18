@@ -329,3 +329,29 @@ function populateComboBox(data) {
 }
 
 populateComboBox(data);
+
+let serialNumber = 1;
+
+
+function addToCart(name, price) {
+
+    let quantity = 1;
+    let total = price * quantity;
+    let cartRow = document.createElement('tr');
+    cartRow.innerHTML = `
+        <td>${serialNumber}</td>
+        <td>${name}</td>
+        <td>${quantity}</td>
+        <td>$${price}</td>
+        <td>$${total}</td>
+    `;
+
+    document.getElementById('cart-items').appendChild(cartRow);
+
+    serialNumber++;
+}
+
+
+
+
+

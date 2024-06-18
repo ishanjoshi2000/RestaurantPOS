@@ -32,19 +32,28 @@
             <div class="display ">
                    <div id="product-container" class="scroll-bar">
                    </div>  
+
                    <div class="Billing-section ">
                     
                          <input type="text" class="billno" placeholder="BillNO">
+                         <select id="payment-box">
+                            <option>Cash</option>
+                            <option>Esewa</option>
+                            <option>Fonepay</option>
+                            <option>Other</option>
+                        </select>
                          <div class="Cart">
-                             
+                            <table>
+                                <tr>
+                                    <th>S.no</th>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>total</th>
+                                </tr>
+                            </table>
                          </div>
-                            <select id="payment-box">
-                                <option>Cash</option>
-                                <option>Esewa</option>
-                                <option>Fonepay</option>
-                                <option>Other</option>
-                          </select>
-                          <form>
+                          <form class="cart-actions">
                          <input type="button" value="OK">
                          <input type="button"  value="checkout">
                        </form>
