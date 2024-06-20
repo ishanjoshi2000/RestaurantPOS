@@ -304,10 +304,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const productContainer = document.getElementById('product-container');
 
-
     const productsHTML = data.products.map(product => `
         <div class="product">
-
             <img src="${product.image}">
              <h2>${product.name}</h2>
             <p>Price:Rs${product.price}</p>
@@ -330,26 +328,70 @@ function populateComboBox(data) {
 
 populateComboBox(data);
 
-let serialNumber = 1;
 
+let cart = [];
 
 function addToCart(name, price) {
 
-    let quantity = 1;
-    let total = price * quantity;
-    let cartRow = document.createElement('tr');
-    cartRow.innerHTML = `
-        <td>${serialNumber}</td>
-        <td>${name}</td>
-        <td>${quantity}</td>
-        <td>$${price}</td>
-        <td>$${total}</td>
-    `;
+    let existingItem = cart.find(item => item.name === name);
 
-    document.getElementById('cart-items').appendChild(cartRow);
+    if (existingItem) {
+        existingItem.quantity++;
+        existingItem.total = existingItem.quantity * price;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1,
+            total: price
+        });
+    }
 
-    serialNumber++;
+    updateCart();
+    document.querySelector('.Cart').scrollTop = document.querySelector('.Cart').scrollHeight;
 }
+
+function updateCart() {
+    const cartBody = document.getElementById('cart-items');
+    cartBody.innerHTML = '';
+    let serialNumber = 1;
+    cart.forEach((item, index) => {
+        const cartRow = document.createElement('tr');
+        cartRow.innerHTML = `
+            <td>${serialNumber}</td>
+            <td>${item.name}</td>
+            <td><input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)"></td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td>$${item.total.toFixed(2)}</td>
+        `;
+        cartBody.appendChild(cartRow);
+        serialNumber++;
+    });
+}
+
+function updateQuantity(index, newQuantity) {
+    const parsedQuantity = parseInt(newQuantity);
+    if (!isNaN(parsedQuantity) && parsedQuantity >= 1) {
+        cart[index].quantity = parsedQuantity;
+        cart[index].total = cart[index].quantity * cart[index].price;
+        updateCart();
+    } else {
+        alert('Please enter a valid quantity.');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const productElements = document.querySelectorAll('.product');
+
+    productElements.forEach((productElement, index) => {
+        productElement.addEventListener('click', () => {
+            const productName = data.products[index].name;
+            const productPrice = data.products[index].price;
+
+            addToCart(productName, productPrice);
+        });
+    });
+});
 
 
 

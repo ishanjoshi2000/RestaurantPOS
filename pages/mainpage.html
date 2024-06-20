@@ -2,7 +2,7 @@
 <html>
     <head>
         <title> Main Page </title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/583be37741.js" crossorigin="anonymous"></script>
         <link href="../styles/mainstyle.css" rel="stylesheet" type="text/css"> 
         <meta name="viewport" content="width=device-width">
         
@@ -17,6 +17,7 @@
                 <div class="search">
                     <form>
                         <input type="text" class="searchfeild" name="Search" placeholder="Search...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
                         <select id="combo-box" name="combo-box">   
                         </select>
                     </form>
@@ -34,7 +35,7 @@
                    </div>  
 
                    <div class="Billing-section ">
-                    
+
                          <input type="text" class="billno" placeholder="BillNO">
                          <select id="payment-box">
                             <option>Cash</option>
@@ -43,7 +44,7 @@
                             <option>Other</option>
                         </select>
                          <div class="Cart">
-                            <table>
+                            <table >
                                 <tr>
                                     <th>S.no</th>
                                     <th>Name</th>
@@ -51,11 +52,13 @@
                                     <th>Price</th>
                                     <th>total</th>
                                 </tr>
+                                <tbody id="cart-items"></tbody>
                             </table>
                          </div>
-                          <form class="cart-actions">
-                         <input type="button" value="OK">
-                         <input type="button"  value="checkout">
+                        <input type="text" readonly class="billtotal"  placeholder="billtotal" >
+                        <form class="cart-actions">
+                            <input type="button" value="Checkout">
+                            <input type="button"  value="Cancel">
                        </form>
 
                    </div>      
