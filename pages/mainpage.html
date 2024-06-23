@@ -2,6 +2,9 @@
 <html>
     <head>
         <title> Main Page </title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
         <script src="https://kit.fontawesome.com/583be37741.js" crossorigin="anonymous"></script>
         <link href="../styles/mainstyle.css" rel="stylesheet" type="text/css"> 
         <meta name="viewport" content="width=device-width">
@@ -44,18 +47,27 @@
                             <option>Other</option>
                         </select>
                          <div class="Cart">
-                            <table >
-                                <tr>
-                                    <th>S.no</th>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>total</th>
-                                </tr>
+                            <table id="billingTable" >
+                                   <div class="head"> 
+                                    <thead>
+                                        <tr>
+                                            <th>S.no</th>
+                                            <th>Name</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>total</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    </div>
                                 <tbody id="cart-items"></tbody>
                             </table>
                          </div>
-                        <input type="text" readonly id="billtotal"  placeholder="billtotal" >
+                         <div class="totalWrap">
+                            <label>BillTotal:</label>
+                            <input type="text" readonly id="billtotal"  placeholder="billtotal" class="billtotal">
+                        </div>
+                       
                         <form class="cart-actions">
                             <input type="button" value="Checkout">
                             <input type="button"  value="Cancel">

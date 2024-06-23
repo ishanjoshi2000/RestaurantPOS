@@ -348,33 +348,39 @@ function addToCart(name, price) {
     }
 
     updateCart();
-    document.querySelector('.Cart').scrollTop = document.querySelector('.Cart').scrollHeight;
+    
 }
 
 function updateCart() {
-    const cartBody = document.getElementById('cart-items');
-    cartBody.innerHTML = '';
-    let serialNumber = 1;
-    cart.forEach((item, index) => {
-        const cartRow = document.createElement('tr');
-        cartRow.innerHTML = `
-            <td>${serialNumber}</td>
-            <td>${item.name}</td>
-            <td><input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)"></td>
-            <td>$${item.price.toFixed(2)}</td>
-            <td>$${item.total.toFixed(2)}</td>
-        `;
-        cartBody.appendChild(cartRow);
-        serialNumber++;
-        updatebilltotal();
-    });
+  const cartBody = document.getElementById('cart-items');
+  cartBody.innerHTML = ''; 
+
+  for (let index = cart.length - 1; index >= 0; index--) {
+      const item = cart[index];
+      const serialNumber = cart.length - index; 
+
+      const cartRow = document.createElement('tr');
+      cartRow.innerHTML = `
+          <td>${serialNumber}</td>
+          <td>${item.name}</td>
+          <td><input type="number" readonly min="1" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)" id="qty-input"></td>
+          <td id="item-price">$${item.price.toFixed(2)}</td>
+          <td id="item-total">$${item.total.toFixed(2)}</td>
+          <td><button class="remove" onclick="removeItem(${index})"><i class="fa-solid fa-trash"></i></button></td>
+      `;
+      cartBody.appendChild(cartRow);
+  }
+
+  updatebilltotal();
 }
+
 
 function updateQuantity(index, newQuantity) {
     const parsedQuantity = parseInt(newQuantity);
     if (!isNaN(parsedQuantity) && parsedQuantity >= 1) {
         cart[index].quantity = parsedQuantity;
         cart[index].total = cart[index].quantity * cart[index].price;
+      
         updateCart();
     } else {
         alert('Please enter a valid quantity.');
@@ -402,5 +408,9 @@ function updatebilltotal(){
   document.getElementById("billtotal").value=grandtotal.toFixed();
 }
 
-
+const table = $('#billingTable').DataTable({
+  paging: false, 
+  searching: false, 
+  ordering: false 
+});
 

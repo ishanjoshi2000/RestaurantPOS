@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("../images/restaurant-table-14-persons-restaurant-hall-with-brick-walls-wide-windows-wood-ceiling_140725-8457.jpg") ;
+    /* background-image: url("../images/restaurant-table-14-persons-restaurant-hall-with-brick-walls-wide-windows-wood-ceiling_140725-8457.jpg") ; */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -19,8 +19,9 @@ body{
     width: 100%;
     overflow: hidden;
     border-bottom: solid 2px transparent; 
-    box-shadow: 0 2px 4px rgba(132, 168, 163, 0.5);
+    box-shadow: 0 2px 4px rgba(99, 100, 100, 0.5);
     transition: border-color 0.3s ease; 
+    background-color: #6dd4f3;
 
 }
 .logo img{
@@ -32,7 +33,7 @@ body{
 .logo h2{
     font-size: 1.2rem;
     margin: 10px 0;
-    background: linear-gradient(to right , #67cac2, #34a592,#0ea5aa);
+    background: linear-gradient(to right , #7eca67, #34a543,#0eaa4a);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -55,25 +56,27 @@ a::after {
     left: 0;
     width: 100%;
     height: 2px; 
-    background-color: rgb(117, 117, 126); 
+    background-color: rgb(5, 247, 146); 
     opacity: 0;
     transition: opacity 0.3s ease;
-    box-shadow: 0px 0px 10px rgb(71, 71, 77); 
+    box-shadow: 0px 0px 10px rgb(87, 230, 187); 
 }
 
 a:hover::after {
     opacity: 1; 
 }
 a:hover{
-    color:#6d6565fa;
+    color:#186d5ffa;
 }
 a.current{
-    color:#6d6565fa;
+    color:#186d5ffa;
 }
 /* product dispaly styling */
 .display{
- margin-top: 90px;
+ margin-top: 70px;
  display: flex;
+ background-color: #e2e2e2;
+ 
 
 }
 
@@ -83,13 +86,14 @@ a.current{
     flex-wrap: wrap;
     overflow-y: auto; 
     max-height: 550px; 
+    margin-top: 5px;
 
 }
 
 .product {
     border: 1px solid #ddd;
     border-radius: 15px;
-    background-color:  rgb(209, 216, 218); 
+    background-color:  rgb(230, 232, 233); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     width: 250px;
     margin: 5px;
@@ -135,7 +139,7 @@ a.current{
     width: 250px;
     height: 30px;
     border-radius: 10px;
-    border: 1px solid #ccc; 
+    border: 1px solid #c9c9c9; 
     background: transparent;
     margin-right: 10px;
 
@@ -147,25 +151,98 @@ a.current{
 .Billing-section{
     display: block;
     padding-left: 10px;
- 
+    background-color: #dfdfdf;
+    margin-top: 10px;
+   
 }
-.Cart{
+ .Cart{
     margin-top:10px ;
     margin-bottom: 10px;
     padding: 5px;
-    width: 520px;
-    height: 450px;
-    overflow: auto;
-    background-color:  rgb(209, 216, 218); 
+    width: 530px;
+    height: 400px;
+    overflow-y: auto; 
+    overflow-x: hidden;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px #131212;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+    background-color: #ffffff;
+ }
 .cart-actions{
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
+}
+.cart-actions input{
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #56f0e3; 
+        color: white; 
+        border: none; 
+        text-align: center; 
+        text-decoration: none; 
+        font-size: 16px; 
+        cursor: pointer;
+        border-radius: 5px; 
+        transition: background-color 0.3s; 
+
+}
+.cart-actions input:hover{
+    transition: background-color 0.3s; 
+    background-color: #0de4c0;
+}
+.totalWrap{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.totalWrap input {
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    width: 150px; 
+}
+.billtotal{
+    width: 100px;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+#billingTable #qty-input{
+    width: 70px;
+    border: none;
+}
+
+#billingTable th,
+#billingTable td  {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#billingTable .remove{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1rem; 
+}
+#billingTable .remove:hover{
+   transform: scale(1.3);
+}
+#billingTable td:nth-child(1) {
+    width: 20px; 
+}
+
+#billingTable td:nth-child(2) {
+    width: 300px;
+}
+
+#billingTable td:nth-child(3) {
+    width: 50px;
+}
+#billingTable td {
+    padding: 8px; 
+    text-align: left; 
 }
