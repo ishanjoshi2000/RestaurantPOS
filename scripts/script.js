@@ -328,6 +328,11 @@ function populateComboBox(data) {
 
 populateComboBox(data);
 
+const table = $('#billingTable').DataTable({
+  paging: false, 
+  searching: false, 
+  ordering: false 
+});
 
 let cart = [];
 
@@ -380,7 +385,7 @@ function updateQuantity(index, newQuantity) {
     if (!isNaN(parsedQuantity) && parsedQuantity >= 1) {
         cart[index].quantity = parsedQuantity;
         cart[index].total = cart[index].quantity * cart[index].price;
-      
+
         updateCart();
     } else {
         alert('Please enter a valid quantity.');
@@ -408,9 +413,4 @@ function updatebilltotal(){
   document.getElementById("billtotal").value=grandtotal.toFixed();
 }
 
-const table = $('#billingTable').DataTable({
-  paging: false, 
-  searching: false, 
-  ordering: false 
-});
 
