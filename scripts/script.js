@@ -307,8 +307,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const productsHTML = data.products.map(product => `
         <div class="product">
             <img src="${product.image}">
-             <h2>${product.name}</h2>
-            <p>Price:Rs${product.price}</p>
+           
+              <h2>${product.name}</h2>
+              <p>Price:Rs${product.price}</p>         
         </div>
     `);
     productContainer.innerHTML = productsHTML.join('');
@@ -368,7 +369,7 @@ function updateCart() {
       cartRow.innerHTML = `
           <td>${serialNumber}</td>
           <td>${item.name}</td>
-          <td><input type="number" readonly min="1" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)" id="qty-input"></td>
+          <td>${item.quantity}</td>
           <td id="item-price">$${item.price.toFixed(2)}</td>
           <td id="item-total">$${item.total.toFixed(2)}</td>
           <td><button class="remove" onclick="removeItem(${index})"><i class="fa-solid fa-trash"></i></button></td>
@@ -413,4 +414,7 @@ function updatebilltotal(){
   document.getElementById("billtotal").value=grandtotal.toFixed();
 }
 
-
+function menuclick() {
+  const menu = document.querySelector(".navigation"); 
+  
+}
