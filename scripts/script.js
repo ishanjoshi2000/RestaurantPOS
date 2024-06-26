@@ -416,5 +416,5 @@ function updatebilltotal(){
 
 function menuclick() {
   const menu = document.querySelector(".navigation"); 
-  
+ 
 }
